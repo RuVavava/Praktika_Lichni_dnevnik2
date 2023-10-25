@@ -1,0 +1,112 @@
+﻿<Page x:Class="Praktika_Lichni_dnevnik.Pages.Record_z"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Praktika_Lichni_dnevnik.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Record_z">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            
+            
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0"
+                   Grid.ColumnSpan="6"
+                   Grid.Row="0"
+                   Grid.RowSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="Опишите Ваш день:"
+                   FontSize="30"
+                   FontFamily="Courier New"/>
+        <DatePicker x:Name="vibor_date"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="1"
+                   Grid.RowSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width ="200"
+                   FontSize="15"
+                   FontFamily="Courier New"/>
+
+        <ComboBox x:Name="vibor_mood" ItemsSource="{Binding moods}"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="1"
+                   Grid.RowSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width ="200"
+                   Height="25"
+                   FontSize="15"
+                   FontFamily="Courier New" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name_mood}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBox  x:Name="vibor_text"
+                Grid.Column="0"
+                  Grid.ColumnSpan="5"
+                  Grid.Row="3"
+                   Grid.RowSpan="6"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Width ="550"
+                   Height="170"
+                   FontSize="15"
+                   FontFamily="Courier New"/>
+        <Button  Grid.Column="0"
+                  Grid.Row="8"
+                 Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width ="180"
+                   Height="27"
+                   FontSize="15"
+                   FontFamily="Courier New" Click="Dobavit_photo">
+            Добавить фото:
+        </Button>
+
+        <Button  Grid.Column="2"
+                  Grid.Row="8"
+                 Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width ="220"
+                   Height="27"
+                   FontSize="15"
+                   FontFamily="Courier New" Click="Button_Click">
+            Посмотреть все записи:
+        </Button>
+
+        <Image x:Name="PhotoImage"></Image>
+
+    </Grid>
+</Page>
